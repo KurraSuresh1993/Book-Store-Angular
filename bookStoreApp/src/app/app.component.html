@@ -1,7 +1,8 @@
 <div>
-  <h1>Header</h1>
+  <a routerLink="/home">Home</a>
+  <a routerLink="/auth/login" [queryParams]="{ name: 'suresh', email: 'tests' }"
+    >Login</a
+  >
+  <a routerLink="/public/all-books">All Books</a>
 </div>
 <router-outlet></router-outlet>
-<div>
-  <h1>footer</h1>
-</div>
