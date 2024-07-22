@@ -1,5 +1,9 @@
-<h1>All Books</h1>
+<h1>{{ pageTitle }}</h1>
 
+<button mat-raised-button color="warn" (click)="increase()">Counter ++</button
+>&nbsp;
+<button mat-raised-button color="warn" (click)="decrease()">Counter --</button>
+<p>Counter {{ _counterService.counter }}</p>
 <div class="container">
   <mat-card class="book-card" *ngFor="let book of books">
     <mat-card-header>
@@ -14,10 +18,10 @@
       <br />
       <p>Author: {{ book.author }}</p>
       <p>Total Page: {{ book.totalPages }}</p>
-      <p>Price:{{ book.price.value + " " + book.price.currency }}</p>
+      <p>Price: {{ book.price.value + " " + book.price.currency }}</p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>Details</button>
+      <button mat-button>DETAILS</button>
       <button mat-button>SHARE</button>
     </mat-card-actions>
   </mat-card>
