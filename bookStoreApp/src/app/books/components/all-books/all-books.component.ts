@@ -25,17 +25,19 @@ export class AllBooksComponent implements OnInit {
     public _counterService: Counter2Service
   ) {}
   ngOnInit(): void {
+    var books: BookModel[];
     this.pageTitle = 'All Books';
-    var allBooks = this.bookService.getBooks();
-    var obj = new BookModel();
-    allBooks.forEach((item) => {
-      obj.id = item.id;
-      obj.author = item.author;
-      obj.title = item.title;
-      obj.price = item.price;
-      obj.totalPages = item.totalPages;
-      this.books.push(obj);
-    });
+    this.books = this.bookService.getBooks();
+    // var obj = new BookModel();
+    // allBooks.forEach((item) => {
+    //   obj.id = item.id;
+    //   obj.author = item.author;
+    //   obj.title = item.title;
+    //   obj.price = item.price;
+    //   obj.totalPages = item.totalPages;
+    //   this.books.push(obj);
+    // });
+
     console.log(this.books);
   }
 

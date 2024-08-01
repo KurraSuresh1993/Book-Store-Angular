@@ -1,9 +1,10 @@
-<p>home works!</p>
+<p #title>home works!</p>
 <button mat-raised-button color="warn" (click)="increase()">Counter ++</button
 >&nbsp;
-<button mat-raised-button color="warn" (click)="decrease()">Counter --</button>
+<button mat-raised-button (click)="decrease()" #decButton>Counter --</button>
 <p>Counter={{ _counterService.counter }}</p>
 <p>{{ config.title }}</p>
 <p>{{ config.description }}</p>
+
 <h2>our authors</h2>
-<app-authors></app-authors>
+<app-authors #authors></app-authors>

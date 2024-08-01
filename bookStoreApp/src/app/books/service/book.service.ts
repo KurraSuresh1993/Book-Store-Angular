@@ -112,4 +112,28 @@ export class BookService {
       },
     ];
   }
+  public getRecentBooks(): any[] {
+    return [
+      {
+        id: 5,
+        title: 'React',
+        totalPages: 320,
+        author: 'Michael Lee',
+        price: {
+          currency: 'USD',
+          value: 21.99,
+        },
+      },
+      {
+        id: 6,
+        title: 'WEB API',
+        totalPages: 280,
+        author: 'Sophie Adams',
+        price: {
+          currency: 'EUR',
+          value: 19.49,
+        },
+      },
+    ];
+  }
 }

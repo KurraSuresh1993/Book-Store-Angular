@@ -6,6 +6,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { MaterialModule } from './material.module';
 import { FooterComponent } from './components/footer/footer.component';
 import { AuthorsComponent } from './components/authors/authors.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { AuthorsComponent } from './components/authors/authors.component';
     FooterComponent,
     AuthorsComponent,
   ],
-  imports: [RouterModule, MaterialModule],
+  imports: [RouterModule, MaterialModule, CommonModule],
   exports: [
     ToolbarComponent,
     FooterComponent,

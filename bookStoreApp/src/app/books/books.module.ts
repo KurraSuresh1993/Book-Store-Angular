@@ -6,9 +6,11 @@ import { PublicRoutingModule } from './books-routing.module';
 import { BooksComponent } from './books.component';
 import { BookService } from './service/book.service';
 import { MaterialModule } from '../shared/material.module';
+import { RecentBooksComponent } from './components/recent-books/recent-books.component';
+import { BookCardComponent } from './components/book-card/book-card.component';
 
 @NgModule({
-  declarations: [AllBooksComponent, BookDetailsComponent, BooksComponent],
+  declarations: [AllBooksComponent, BookDetailsComponent, BooksComponent, RecentBooksComponent, BookCardComponent],
   imports: [CommonModule, PublicRoutingModule, MaterialModule],
 })
 export class BooksModule {}
