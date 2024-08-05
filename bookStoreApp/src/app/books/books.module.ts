@@ -8,9 +8,18 @@ import { BookService } from './service/book.service';
 import { MaterialModule } from '../shared/material.module';
 import { RecentBooksComponent } from './components/recent-books/recent-books.component';
 import { BookCardComponent } from './components/book-card/book-card.component';
+import { AddBookComponent } from './components/add-book/add-book.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AllBooksComponent, BookDetailsComponent, BooksComponent, RecentBooksComponent, BookCardComponent],
-  imports: [CommonModule, PublicRoutingModule, MaterialModule],
+  declarations: [
+    AllBooksComponent,
+    BookDetailsComponent,
+    BooksComponent,
+    RecentBooksComponent,
+    BookCardComponent,
+    AddBookComponent,
+  ],
+  imports: [CommonModule, PublicRoutingModule, MaterialModule, FormsModule],
 })
 export class BooksModule {}
