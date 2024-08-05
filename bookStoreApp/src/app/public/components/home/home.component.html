@@ -1,10 +1,13 @@
-<p #title>home works!</p>
-<button mat-raised-button color="warn" (click)="increase()">Counter ++</button
->&nbsp;
-<button mat-raised-button (click)="decrease()" #decButton>Counter --</button>
-<p>Counter={{ _counterService.counter }}</p>
-<p>{{ config.title }}</p>
-<p>{{ config.description }}</p>
+<p>home Parent works!</p>
+<h1>{{ count }}</h1>
 
-<h2>our authors</h2>
-<app-authors #authors></app-authors>
+<button (click)="counter()" #btnCounter>Counter</button>
+<!-- <app-authors [data]="count" [data1]="isAct" [author]="auth">
+  <h2>dynamic data from Parent</h2>
+</app-authors> -->
+
+<hr />
+
+<app-authors [data]="count" [data1]="isAct" [author]="auth">
+  <app-authors-address [address]="address"></app-authors-address>
+</app-authors>

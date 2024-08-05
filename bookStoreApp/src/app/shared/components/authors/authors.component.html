@@ -1,4 +1,11 @@
-<p>authors works!</p>
-<p>
-  Data is comming from parent component - <b>{{ data }}</b>
-</p>
+<div class="child">
+  <p>authors child works!</p>
+  <button (click)="incCount()">Click Me {{ childCount }}</button>
+  <p>Data from Parent= {{ data }} {{ data1 }}</p>
+  <br />
+  <p>author data:</p>
+  <br />
+  <p>author id ={{ author.id }}</p>
+  <p>author name={{ author.name }}</p>
+  <ng-content></ng-content>
+</div>

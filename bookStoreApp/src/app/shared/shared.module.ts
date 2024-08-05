@@ -7,6 +7,7 @@ import { MaterialModule } from './material.module';
 import { FooterComponent } from './components/footer/footer.component';
 import { AuthorsComponent } from './components/authors/authors.component';
 import { CommonModule } from '@angular/common';
+import { AuthorsAddressComponent } from './components/authors-address/authors-address.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { CommonModule } from '@angular/common';
     ToolbarComponent,
     FooterComponent,
     AuthorsComponent,
+    AuthorsAddressComponent,
   ],
   imports: [RouterModule, MaterialModule, CommonModule],
   exports: [
@@ -21,6 +23,7 @@ import { CommonModule } from '@angular/common';
     FooterComponent,
     MaterialModule,
     AuthorsComponent,
+    AuthorsAddressComponent,
   ],
 })
 export class SharedModule {}
