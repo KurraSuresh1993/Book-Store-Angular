@@ -18,12 +18,15 @@ export class AddBookComponent implements OnInit {
   constructor(private _bookService: BookService) {}
   ngOnInit(): void {}
   addBook(value: any): void {
+    console.log(value);
     var book: BookModel = new BookModel();
     book.title = value.title;
     book.author = value.author;
     book.totalPages = value.pages;
+    book.publishedOn = value.publishedOn;
+    book.isPublished = value.isPublished;
 
-    book.price = value.price;
+    book.price = { currency: 'INR', value: value.price };
     this._bookService.addBook(book);
   }
 }

@@ -1,9 +1,40 @@
 <h1>Add New Book</h1>
-<form #myForm="ngForm" (ngSubmit)="addBook(myForm.value)">
-  <input type="text" name="title" placeholder="title" ngModel /><br /><br />
-  <input type="text" name="author" placeholder="author" ngModel /><br /><br />
-  <input type="number" name="pages" placeholder="pages" ngModel /><br /><br />
-  <input type="number" name="price" placeholder="price" ngModel /><br /><br />
-  <button>Save</button>
+<form #myForm="ngForm" (ngSubmit)="addBook(myForm.value)" class="add-book">
+  <mat-form-field appearance="fill">
+    <mat-label>Title</mat-label>
+    <input matInput name="title" placeholder="Title" ngModel />
+    <mat-icon matSuffix>title</mat-icon>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Author</mat-label>
+    <input matInput name="author" placeholder="Author" ngModel />
+    <mat-icon matSuffix>person</mat-icon>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Pages</mat-label>
+    <input type="number" matInput name="pages" placeholder="Pages" ngModel />
+    <mat-icon matSuffix>123</mat-icon>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-select name="price" placeholder="Price" ngModel>
+      <mat-option value="9">$ 9</mat-option>
+      <mat-option value="99">$ 99</mat-option>
+      <mat-option value="999">$ 999</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker" name="publishedOn" ngModel />
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker">
+      <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+    </mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-slide-toggle class="toggle" name="isPublished" ngModel
+    >Book is Published</mat-slide-toggle
+  >
+
+  <button mat-raised-button color="primary">Save</button>
 </form>
 <h1>{{ myForm.value | json }}</h1>
