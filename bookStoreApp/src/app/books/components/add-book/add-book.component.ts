@@ -15,18 +15,23 @@ import { BookModel } from '../../Models/book.model';
   styleUrls: ['./add-book.component.css'],
 })
 export class AddBookComponent implements OnInit {
+  @ViewChild('myForm') myForm: NgForm;
   constructor(private _bookService: BookService) {}
   ngOnInit(): void {}
   addBook(value: any): void {
-    console.log(value);
-    var book: BookModel = new BookModel();
-    book.title = value.title;
-    book.author = value.author;
-    book.totalPages = value.pages;
-    book.publishedOn = value.publishedOn;
-    book.isPublished = value.isPublished;
+    if (this.myForm.valid) {
+      console.table(value);
+      var book: BookModel = new BookModel();
+      book.title = value.title;
+      book.author = value.author;
+      book.totalPages = value.pages;
+      book.publishedOn = value.publishedOn;
+      book.isPublished = value.isPublished;
 
-    book.price = { currency: 'INR', value: value.price };
-    this._bookService.addBook(book);
+      book.price = { currency: 'INR', value: value.price };
+      this._bookService.addBook(book);
+    } else {
+      alert('enter required fields');
+    }
   }
 }

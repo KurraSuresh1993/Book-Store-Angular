@@ -10,12 +10,12 @@ import { Counter2Service } from 'src/app/shared/services/counter2.service';
   styleUrls: ['./all-books.component.css'],
 })
 export class AllBooksComponent implements OnInit {
-  public books: BookModel[] = [];
+  public books: BookModel[];
 
   constructor(public bookService: BookService) {}
   ngOnInit(): void {
-    var books: BookModel[];
+    //var books: BookModel[];
     this.books = this.bookService.getBooks();
-    console.log(this.books);
+    console.table(this.books);
   }
 }

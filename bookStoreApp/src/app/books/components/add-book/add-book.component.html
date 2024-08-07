@@ -1,19 +1,74 @@
 <h1>Add New Book</h1>
+<table>
+  <tr>
+    <td>pristine</td>
+    <td>{{ booktitle.pristine }}</td>
+  </tr>
+  <tr>
+    <td>dirty</td>
+    <td>{{ booktitle.dirty }}</td>
+  </tr>
+  <tr>
+    <td>touched</td>
+    <td>{{ booktitle.touched }}</td>
+  </tr>
+  <tr>
+    <td>status</td>
+    <td>{{ booktitle.status }}</td>
+  </tr>
+  <tr>
+    <td>error</td>
+    <td>{{ booktitle.errors | json }}</td>
+  </tr>
+</table>
 <form #myForm="ngForm" (ngSubmit)="addBook(myForm.value)" class="add-book">
   <mat-form-field appearance="fill">
     <mat-label>Title</mat-label>
-    <input matInput name="title" placeholder="Title" ngModel />
+    <input
+      matInput
+      name="title"
+      placeholder="Title"
+      ngModel
+      required
+      #booktitle="ngModel"
+      minlength="10"
+    />
     <mat-icon matSuffix>title</mat-icon>
+    <mat-hint *ngIf="booktitle.invalid && booktitle.touched">
+      <span>Please enter book title</span>
+    </mat-hint>
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Author</mat-label>
-    <input matInput name="author" placeholder="Author" ngModel />
+    <input
+      matInput
+      name="author"
+      placeholder="Author"
+      ngModel
+      required
+      #bookauthor="ngModel"
+    />
     <mat-icon matSuffix>person</mat-icon>
+    <mat-hint *ngIf="bookauthor.invalid && bookauthor.touched"
+      >Please enter book author</mat-hint
+    >
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Pages</mat-label>
-    <input type="number" matInput name="pages" placeholder="Pages" ngModel />
+    <input
+      type="number"
+      matInput
+      name="pages"
+      placeholder="Pages"
+      ngModel
+      min="10"
+      max="100"
+      #bookpages="ngModel"
+    />
     <mat-icon matSuffix>123</mat-icon>
+    <mat-hint [hidden]="bookpages.valid"
+      >Please enter pages between 10 to 100</mat-hint
+    >
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-select name="price" placeholder="Price" ngModel>
@@ -35,6 +90,8 @@
     >Book is Published</mat-slide-toggle
   >
 
-  <button mat-raised-button color="primary">Save</button>
+  <button mat-raised-button color="primary" [disabled]="myForm.invalid">
+    Save
+  </button>
 </form>
 <h1>{{ myForm.value | json }}</h1>

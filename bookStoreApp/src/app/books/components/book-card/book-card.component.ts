@@ -9,7 +9,7 @@ import { BookModel } from '../../Models/book.model';
 export class BookCardComponent {
   @Input('allbooks')
   public set books(books: BookModel[]) {
-    books.map((x) => (x.title = 'Title: ' + x.title));
+    books.map((x) => x.title);
     this._books = books;
   }
   public get books() {
