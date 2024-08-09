@@ -1,0 +1,16 @@
+.add-book {
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+}
+.toggle {
+  margin-bottom: 20px;
+}
+mat-hint {
+  color: red;
+}
+.price-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

@@ -1,26 +1,5 @@
 <h1>Add New Book</h1>
-<table>
-  <tr>
-    <td>pristine</td>
-    <td>{{ booktitle.pristine }}</td>
-  </tr>
-  <tr>
-    <td>dirty</td>
-    <td>{{ booktitle.dirty }}</td>
-  </tr>
-  <tr>
-    <td>touched</td>
-    <td>{{ booktitle.touched }}</td>
-  </tr>
-  <tr>
-    <td>status</td>
-    <td>{{ booktitle.status }}</td>
-  </tr>
-  <tr>
-    <td>error</td>
-    <td>{{ booktitle.errors | json }}</td>
-  </tr>
-</table>
+
 <form #myForm="ngForm" (ngSubmit)="addBook(myForm.value)" class="add-book">
   <mat-form-field appearance="fill">
     <mat-label>Title</mat-label>
