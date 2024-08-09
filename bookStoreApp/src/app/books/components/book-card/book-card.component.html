@@ -3,18 +3,21 @@
     <mat-card-header>
       <mat-card-title>Title: {{ book.title }}</mat-card-title>
     </mat-card-header>
-    <img
-      mat-card-image
+    <img mat-card-image
       src="https://media.istockphoto.com/id/1302849963/photo/smiling-mature-woman-hugging-her-dog-outside-in-her-yard.jpg?s=1024x1024&w=is&k=20&c=XOPk9vVJYC75bwyycQA5-dcQkbkkNU8R7rYTY8yTtPU="
-      alt="Photo of a Shiba Inu"
-    />
+      alt="Photo of a Shiba Inu" />
     <mat-card-content>
       <br />
-      <p>Author: {{ book.author }}</p>
+      <!-- <p>Author: {{ book.author }}</p> -->
       <p>Total Page: {{ book.totalPages }}</p>
       <p>Price: {{ book.price.value + " " + book.price.currency }}</p>
       <p>Published On: {{ book.publishedOn }}</p>
       <p>Is Published: {{ book.isPublished }}</p>
+      <p> Author :
+      <span *ngFor="let author of book.authors">
+        {{author.fullName}}({{author.address}})
+      </span>
+      </p>
     </mat-card-content>
     <mat-card-actions>
       <button mat-button>DETAILS</button>

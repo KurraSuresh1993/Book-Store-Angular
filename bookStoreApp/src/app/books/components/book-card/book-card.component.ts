@@ -7,13 +7,6 @@ import { BookModel } from '../../Models/book.model';
   styleUrls: ['./book-card.component.css'],
 })
 export class BookCardComponent {
-  @Input('allbooks')
-  public set books(books: BookModel[]) {
-    books.map((x) => x.title);
-    this._books = books;
-  }
-  public get books() {
-    return this._books;
-  }
-  private _books: BookModel[];
+  @Input('allbooks') books:BookModel[];
+  
 }

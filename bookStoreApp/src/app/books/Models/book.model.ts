@@ -1,3 +1,4 @@
+import { AuthorModel } from './author.model';
 import { PriceModel } from './price.model';
 
 export class BookModel {
@@ -8,5 +9,5 @@ export class BookModel {
   public price: PriceModel;
   public publishedOn: Date;
   public isPublished: boolean;
-  public authors: string[];
+  public authors: AuthorModel[];
 }

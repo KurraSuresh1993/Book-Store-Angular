@@ -8,6 +8,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AuthorsComponent } from './components/authors/authors.component';
 import { CommonModule } from '@angular/common';
 import { AuthorsAddressComponent } from './components/authors-address/authors-address.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,13 +18,14 @@ import { AuthorsAddressComponent } from './components/authors-address/authors-ad
     AuthorsComponent,
     AuthorsAddressComponent,
   ],
-  imports: [RouterModule, MaterialModule, CommonModule],
+  imports: [RouterModule, MaterialModule, CommonModule,HttpClientModule],
   exports: [
     ToolbarComponent,
     FooterComponent,
     MaterialModule,
     AuthorsComponent,
     AuthorsAddressComponent,
+    HttpClientModule
   ],
 })
 export class SharedModule {}

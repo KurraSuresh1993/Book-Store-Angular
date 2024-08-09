@@ -15,7 +15,15 @@ export class AllBooksComponent implements OnInit {
   constructor(public bookService: BookService) {}
   ngOnInit(): void {
     //var books: BookModel[];
-    this.books = this.bookService.getBooks();
-    console.table(this.books);
+    //this.books = this.bookService.getBooks();
+    //console.table(this.books);
+    this.getAllBooks();
   }
+private getAllBooks(){
+  this.bookService.getBooks().subscribe(book=>{
+    this.books=book;
+    console.table(this.books);
+  });
+}
+
 }
